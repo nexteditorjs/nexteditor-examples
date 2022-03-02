@@ -1,6 +1,10 @@
 import React from 'react';
-import { NextEditor as Editor } from '@nexteditorjs/nexteditor-core';
+import { createEmptyDoc, NextEditor as Editor, LocalDoc } from '@nexteditorjs/nexteditor-core';
 import NextEditor from '../NextEditor';
+
+const defaultDoc = new LocalDoc(createEmptyDoc('', {
+  firstLineAsTitle: true,
+}));
 
 export default function Simple() {
   //
@@ -9,6 +13,6 @@ export default function Simple() {
   }, []);
   //
   return (
-    <NextEditor onCreate={handleCreate}/>
+    <NextEditor onCreate={handleCreate} initDoc={defaultDoc}/>
   );
 }
