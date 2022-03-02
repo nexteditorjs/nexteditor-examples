@@ -12,8 +12,8 @@
     "@emotion/styled": "^11.8.1",
     "@mui/icons-material": "^5.4.4",
     "@mui/material": "^5.4.4",
-    "@nexteditorjs/nexteditor-core": "*",
-    "@nexteditorjs/nexteditor-table-block": "*",
+    "@nexteditorjs/nexteditor-core": "^0.0.1-beta",
+    "@nexteditorjs/nexteditor-table-block": "^0.0.1-beta",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
