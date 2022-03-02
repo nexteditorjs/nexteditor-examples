@@ -1,44 +1,39 @@
-import { useState } from 'react';
-import logo from './logo.svg';
+import React from 'react';
+import Box from '@mui/material/Box';
+import Header from './Header';
+import Simple from './pages/Simple';
+import { useFunctionAsState } from './hooks/use-function-as-state';
+
 import './App.css';
 
+const examplePages: { [index: string]: () => JSX.Element } = {
+  simple: Simple,
+};
+
 function App() {
-  const [count, setCount] = useState(0);
+  //
+  const [currentExample, setCurrentExample] = useFunctionAsState(null);
+  //
+  const handleChangeExample = (type: string) => {
+    const page = examplePages[type];
+    if (page) {
+      setCurrentExample(page);
+    }
+  };
+
+  const Example = currentExample ?? examplePages.simple;
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React!</p>
-        <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.tsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
-      </header>
-    </div>
+    <Box sx={{ flexGrow: 1,
+      height: '100vh',
+      display: 'flex',
+      flexDirection: 'column' }}
+    >
+      <Header onChange={handleChangeExample} />
+      <div className="editor-page">
+        {Example && <Example />}
+      </div>
+    </Box>
   );
 }
 
