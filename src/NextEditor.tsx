@@ -1,13 +1,16 @@
 import React from 'react';
-import { NextEditor as Editor, createEditor, LocalDoc } from '@nexteditorjs/nexteditor-core';
-import './App.css';
+import { NextEditor as Editor, createEditor, NextEditorDoc, LocalDoc, editorBlocks } from '@nexteditorjs/nexteditor-core';
+import TableBlock from '@nexteditorjs/nexteditor-table-block';
+
+editorBlocks.registerComplexBlockClass(TableBlock);
 
 export interface NextEditorProps {
+  initDoc?: NextEditorDoc;
   onCreate?: (editor: Editor) => void;
 }
 
 export default function NextEditor(props: NextEditorProps) {
-  const { onCreate } = props;
+  const { initDoc, onCreate } = props;
   //
   const containerRef = React.useRef(null);
   const editorRef = React.useRef<Editor | null>();
@@ -15,7 +18,7 @@ export default function NextEditor(props: NextEditorProps) {
   React.useEffect(() => {
     const parent = containerRef.current;
     if (parent) {
-      editorRef.current = createEditor(parent, new LocalDoc());
+      editorRef.current = createEditor(parent, initDoc ?? new LocalDoc());
       if (onCreate) {
         onCreate(editorRef.current);
       }
