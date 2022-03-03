@@ -6,6 +6,6 @@ export default defineConfig({
   server: {
     port: 4000,
   },
-  base: '/examples',
+  base: '/examples/',
   plugins: [react()]
 })
