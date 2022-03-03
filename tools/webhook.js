@@ -4,9 +4,9 @@ const path = require('path');
 const handler = createHandler({ path: '/webhook', secret: process.env["PUSH_SECRET"] })
 const spawn = require('child_process').spawn;
 
-function exec(name, path, argv) {
+function exec(name, path, argv, options) {
   return new Promise((resolve) => {
-    const s = spawn(path, argv);
+    const s = spawn(path, argv, options);
     s.stdout.on('data', (data) => {
       console.log(`${name}: ${data}`);
     });
@@ -44,7 +44,9 @@ handler.on('push', function (event) {
   //
   console.log('auto build');
   const shFile = path.resolve(__dirname, 'build.sh');
-  exec('pull & build', 'sh', [shFile]);
+  exec('pull & build', 'sh', [shFile], {
+    cwd: __dirname,
+  });
 })
 
 handler.on('issues', function (event) {
