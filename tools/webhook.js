@@ -6,6 +6,7 @@ const spawn = require('child_process').spawn;
 
 function exec(name, path, argv, options) {
   return new Promise((resolve) => {
+    console.log(`exec ${name}: ${path} ${argv.join(' ')}, ${options}`);
     const s = spawn(path, argv, options);
     s.stdout.on('data', (data) => {
       console.log(`${name}: ${data}`);
