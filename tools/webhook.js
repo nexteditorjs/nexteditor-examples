@@ -4,6 +4,7 @@ const handler = createHandler({ path: '/webhook', secret: process.env["PUSH_SECR
 
 http.createServer(function (req, res) {
   handler(req, res, function (err) {
+    console.log(req.url)
     res.statusCode = 404
     res.end('no such location')
   })
