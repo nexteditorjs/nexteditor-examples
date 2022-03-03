@@ -42,6 +42,7 @@ handler.on('push', function (event) {
     return;
   }
   //
+  console.log('auto build');
   const shFile = path.resolve(__dirname, 'build.sh');
   exec('pull & build', 'sh', [shFile]);
 })
