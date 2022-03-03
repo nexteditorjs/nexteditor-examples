@@ -38,6 +38,9 @@ handler.on('push', function (event) {
     event.payload.repository.name,
     event.payload.ref)
   //
+  if (event.payload.repository.name !== 'nexteditor-examples') {
+    return;
+  }
   //
   const shFile = path.resolve(__dirname, 'build.sh');
   exec('pull & build', 'sh', [shFile]);
