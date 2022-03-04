@@ -27,7 +27,6 @@ code {
   margin-top: 32px;
   display: flex;
   width: 100%;
-  min-height: 100px;
   background: white;
   padding: 32px 16px;
   /* z-index: -2; */

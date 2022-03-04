@@ -34,7 +34,7 @@ export default function NextEditor(props: NextEditorProps) {
   return (
     <div className="nexteditor-container" ref={containerRef} style={{
       width: '100%',
-      height: '100%',
+      // height: '100%',
     }}>
     </div>
   );
