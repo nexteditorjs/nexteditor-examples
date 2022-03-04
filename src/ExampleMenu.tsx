@@ -30,6 +30,7 @@ export default function ExamplesMenu(props: ExamplesMenuProps) {
       }}
     >
       <MenuItem onClick={() => onClose('simple')}>Simple</MenuItem>
+      <MenuItem onClick={() => onClose('tables')}>Tables</MenuItem>
       <MenuItem onClick={() => onClose('yjs')}>Yjs document</MenuItem>
       <MenuItem onClick={() => onClose('share-db')}>ShareDB document</MenuItem>
     </Menu>
