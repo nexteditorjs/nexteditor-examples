@@ -5,9 +5,10 @@ import Header from './Header';
 import Simple from './pages/Simple';
 import ShareDB from './pages/ShareDB';
 import Yjs from './pages/Yjs';
+import Tables from './pages/Tables';
+import Markdown from './pages/Markdown';
 
 import './App.css';
-import Tables from './pages/Tables';
 
 const APP_ROOT = '/examples';
 
@@ -30,6 +31,7 @@ function App() {
         <Routes>
           <Route path={`${APP_ROOT}/simple`} element={<Simple />} />
           <Route path={`${APP_ROOT}/tables`} element={<Tables />} />
+          <Route path={`${APP_ROOT}/markdown-shortcuts`} element={<Markdown />} />
           <Route path={`${APP_ROOT}/share-db`} element={<ShareDB />} />
           <Route path={`${APP_ROOT}/yjs`} element={<Yjs />} />
           <Route path="*" element={<Navigate to={`${APP_ROOT}/simple`} replace />} />
