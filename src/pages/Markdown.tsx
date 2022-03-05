@@ -1,5 +1,6 @@
 import React from 'react';
-import { NextEditor as Editor, LocalDoc, MarkdownInputHandler } from '@nexteditorjs/nexteditor-core';
+import { NextEditor as Editor, LocalDoc } from '@nexteditorjs/nexteditor-core';
+import { MarkdownInputHandler } from '@nexteditorjs/nexteditor-input-handlers';
 import NextEditor from '../NextEditor';
 
 import initData from './docs/markdown.json';
