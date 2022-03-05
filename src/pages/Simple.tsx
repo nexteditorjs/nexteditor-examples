@@ -1,5 +1,6 @@
 import React from 'react';
 import { createEmptyDoc, NextEditor as Editor, LocalDoc } from '@nexteditorjs/nexteditor-core';
+import { EnforceWithDocumentTitleHandler } from '@nexteditorjs/nexteditor-input-handlers';
 import NextEditor from '../NextEditor';
 
 const defaultDoc = new LocalDoc(createEmptyDoc('', {
@@ -9,6 +10,7 @@ const defaultDoc = new LocalDoc(createEmptyDoc('', {
 export default function Simple() {
   //
   const handleCreate = React.useCallback((editor: Editor) => {
+    editor.input.addHandler(new EnforceWithDocumentTitleHandler());
     editor.focus();
   }, []);
   //
