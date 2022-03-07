@@ -10,7 +10,11 @@ const defaultDoc = new LocalDoc(createEmptyDoc('', {
 export default function Simple() {
   //
   const handleCreate = React.useCallback((editor: Editor) => {
-    editor.input.addHandler(new EnforceWithDocumentTitleHandler());
+    editor.input.addHandler(new EnforceWithDocumentTitleHandler({
+      headingLevel: 2,
+      titlePlaceholder: 'Document title',
+      contentPlaceholder: 'Enter some text...',
+    }));
     editor.focus();
   }, []);
   //
