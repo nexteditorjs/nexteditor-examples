@@ -1,6 +1,7 @@
 cd ../
 git reset --hard
 git pull
+rm -rf ./node_modules
 yarn
 yarn build
 
