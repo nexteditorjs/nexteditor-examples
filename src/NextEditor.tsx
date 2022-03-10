@@ -1,8 +1,6 @@
 import React from 'react';
-import { NextEditor as Editor, createEditor, NextEditorDoc, LocalDoc, editorBlocks } from '@nexteditorjs/nexteditor-core';
+import { NextEditor as Editor, createEditor, NextEditorDoc, LocalDoc } from '@nexteditorjs/nexteditor-core';
 import TableBlock from '@nexteditorjs/nexteditor-table-block';
-
-editorBlocks.registerComplexBlockClass(TableBlock);
 
 export interface NextEditorProps {
   initDoc?: NextEditorDoc;
@@ -18,7 +16,11 @@ export default function NextEditor(props: NextEditorProps) {
   React.useEffect(() => {
     const parent = containerRef.current;
     if (parent) {
-      editorRef.current = createEditor(parent, initDoc ?? new LocalDoc());
+      editorRef.current = createEditor(parent, initDoc ?? new LocalDoc(), {
+        components: {
+          blocks: [TableBlock],
+        }
+      });
       if (onCreate) {
         onCreate(editorRef.current);
       }

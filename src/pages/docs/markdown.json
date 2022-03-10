@@ -1,88 +1,90 @@
 {
-  "blocks": [
+  "blocks": {
+    "root": [
       {
-          "id": "zlVK58LN5",
-          "type": "text",
-          "text": [
-              {
-                  "insert": "Markdown shortcuts"
-              }
-          ],
-          "style-heading": 1
+        "id": "zlVK58LN5",
+        "type": "text",
+        "text": [
+          {
+            "insert": "Markdown shortcuts"
+          }
+        ],
+        "style-heading": 1
       },
       {
-          "id": "zg4sn9Xua",
-          "type": "text",
-          "text": [
-              {
-                  "insert": "Next Editor has full control over what the user inputs, so it's easy to implement markdown-like shortcuts."
-              }
-          ]
+        "id": "zg4sn9Xua",
+        "type": "text",
+        "text": [
+          {
+            "insert": "Next Editor has full control over what the user inputs, so it's easy to implement markdown-like shortcuts."
+          }
+        ]
       },
       {
-          "id": "zZnFbF6vt",
-          "type": "text",
-          "text": [
-              {
-                  "insert": "All you need to do is add an input handler to the editor, and when the user is typing, by detecting the content of the user's input, to determine whether the conversion should be performed."
-              }
-          ]
+        "id": "zZnFbF6vt",
+        "type": "text",
+        "text": [
+          {
+            "insert": "All you need to do is add an input handler to the editor, and when the user is typing, by detecting the content of the user's input, to determine whether the conversion should be performed."
+          }
+        ]
       },
       {
-          "id": "zxOPmeAdP",
-          "type": "text",
-          "text": [
-              {
-                  "insert": "Next Editor has a built-in simple markdown shortcuts, you can use #+space, ##+space, etc., to convert the current block into a heading block. At the same time, "
-              }
-          ]
+        "id": "zxOPmeAdP",
+        "type": "text",
+        "text": [
+          {
+            "insert": "Next Editor has a built-in simple markdown shortcuts, you can use #+space, ##+space, etc., to convert the current block into a heading block. At the same time, "
+          }
+        ]
       },
       {
-          "id": "zlhz3w1Zf",
-          "type": "text",
-          "text": [
-              {
-                  "insert": "you can also use **input text**+space to convert the text between ** to bold, etc. "
-              }
-          ]
+        "id": "zlhz3w1Zf",
+        "type": "text",
+        "text": [
+          {
+            "insert": "you can also use **input text**+space to convert the text between ** to bold, etc. "
+          }
+        ]
       },
       {
-          "id": "z2qlBK9L2",
-          "type": "text",
-          "text": [
-              {
-                  "insert": "Currently supports bold, italic and code."
-              }
-          ]
+        "id": "z2qlBK9L2",
+        "type": "text",
+        "text": [
+          {
+            "insert": "Currently supports bold, italic and code."
+          }
+        ]
       },
       {
-          "id": "z8ALxf80G",
-          "type": "text",
-          "text": [
-              {
-                  "insert": "Likewise, Next Editor provides powerful undo/redo functionality. When the result of the conversion does not meet the user's expectations, the user only needs to use the undo function to easily return to the content before the conversion and continue to input."
-              }
-          ]
+        "id": "z8ALxf80G",
+        "type": "text",
+        "text": [
+          {
+            "insert": "Likewise, Next Editor provides powerful undo/redo functionality. When the result of the conversion does not meet the user's expectations, the user only needs to use the undo function to easily return to the content before the conversion and continue to input."
+          }
+        ]
       },
       {
-          "id": "STuQrGRBg",
-          "type": "text",
-          "text": [
-              {
-                  "insert": "Try it out!"
-              }
-          ],
-          "style-heading": 2
+        "id": "STuQrGRBg",
+        "type": "text",
+        "text": [
+          {
+            "insert": "Try it out!"
+          }
+        ],
+        "style-heading": 2
       },
       {
-          "id": "OUwNZXlxe",
-          "type": "text",
-          "text": [
-              {
-                  "insert": "Try it our for your self."
-              }
-          ]
+        "id": "OUwNZXlxe",
+        "type": "text",
+        "text": [
+          {
+            "insert": "Try it our for your self."
+          }
+        ]
       }
-  ],
+    ]
+  },
   "meta": {}
 }
