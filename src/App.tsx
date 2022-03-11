@@ -33,8 +33,8 @@ function App() {
           <Route path={`${APP_ROOT}/simple`} element={<Simple />} />
           <Route path={`${APP_ROOT}/tables`} element={<Tables />} />
           <Route path={`${APP_ROOT}/markdown-shortcuts`} element={<Markdown />} />
-          <Route path={`${APP_ROOT}/share-db`} element={<Navigate to={`${APP_ROOT}/share-db/${genId()}`} replace />} />
-          <Route path={`${APP_ROOT}/share-db/:docId`} element={<ShareDB />} />
+          <Route path={`${APP_ROOT}/sharedb`} element={<Navigate to={`${APP_ROOT}/sharedb/${genId()}`} replace />} />
+          <Route path={`${APP_ROOT}/sharedb/:docId`} element={<ShareDB />} />
           <Route path={`${APP_ROOT}/yjs`} element={<Yjs />} />
           <Route path="*" element={<Navigate to={`${APP_ROOT}/simple`} replace />} />
         </Routes>
