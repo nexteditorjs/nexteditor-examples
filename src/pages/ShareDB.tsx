@@ -5,6 +5,8 @@ import ShareDBDoc from '@nexteditorjs/nexteditor-sharedb';
 import Typography from '@mui/material/Typography';
 import { useParams } from 'react-router-dom';
 import NextEditor from '../NextEditor';
+import Box from '@mui/material/Box';
+import CircularProgress from '@mui/material/CircularProgress';
 
 function getWebSocketAddress() {
   const host = location.origin.replace(/^http/, 'ws');
@@ -64,9 +66,12 @@ export default function ShareDB() {
   }
   //
   if (!doc) {
-    return (<Typography>Loading</Typography>);
+    return (
+      <Box sx={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
+        <CircularProgress size={24} />
+      </Box>
+    );
   }
-  //
   //
   return (
     <NextEditor onCreate={handleCreate} initDoc={doc}/>
