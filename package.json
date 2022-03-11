@@ -15,7 +15,7 @@
     "@nexteditorjs/nexteditor-core": "^0.0.17",
     "@nexteditorjs/nexteditor-input-handlers": "^0.0.18",
     "@nexteditorjs/nexteditor-table-block": "^0.0.15",
-    "@nexteditorjs/nexteditor-sharedb": "^0.0.1",
+    "@nexteditorjs/nexteditor-sharedb": "^0.0.4",
     "github-webhook-handler": "^1.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
