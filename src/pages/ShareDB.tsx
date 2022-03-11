@@ -1,5 +1,6 @@
 import React, { useCallback } from 'react';
-import { createEmptyDoc, NextEditor as Editor, LocalDoc, assert, NextEditorDoc } from '@nexteditorjs/nexteditor-core';
+import { createEmptyDoc, NextEditor as Editor, assert, NextEditorDoc } from '@nexteditorjs/nexteditor-core';
+import { EnforceWithDocumentTitleHandler, MarkdownInputHandler } from '@nexteditorjs/nexteditor-input-handlers';
 import ShareDBDoc from '@nexteditorjs/nexteditor-sharedb';
 import Typography from '@mui/material/Typography';
 import { useParams } from 'react-router-dom';
@@ -49,6 +50,12 @@ export default function ShareDB() {
   }, [docId]);
 
   const handleCreate = React.useCallback((editor: Editor) => {
+    editor.input.addHandler(new MarkdownInputHandler());
+    editor.input.addHandler(new EnforceWithDocumentTitleHandler(editor, {
+      headingLevel: 1,
+      titlePlaceholder: 'Document title',
+      contentPlaceholder: 'Enter some text...',
+    }));
     editor.focus();
   }, []);
   //
