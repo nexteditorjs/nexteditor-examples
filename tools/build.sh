@@ -1,12 +1,15 @@
 cd ../
 git reset --hard
 git pull
-rm -rf ./node_modules
+# rm -rf ./node_modules
 yarn
 yarn build
 
-rm -rf /var/www/examples
-mv ./dist /var/www/examples
+FILE=./dist
+if [ -d "$FILE" ]; then
+  rm -rf /var/www/examples
+  mv ./dist /var/www/examples
+fi
 
 cd ../nexteditor-sharedb-server
 git reset --hard
