@@ -5,6 +5,12 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   server: {
     port: 4000,
+    proxy: {
+      '/examples/sharedb-server': {
+        target: 'ws://localhost:8080',
+        ws: true,
+      }
+    }
   },
   base: '/examples/',
   plugins: [react()]

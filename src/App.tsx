@@ -9,6 +9,7 @@ import Tables from './pages/Tables';
 import Markdown from './pages/Markdown';
 
 import './App.css';
+import { genId } from '@nexteditorjs/nexteditor-core';
 
 const APP_ROOT = '/examples';
 
@@ -32,7 +33,8 @@ function App() {
           <Route path={`${APP_ROOT}/simple`} element={<Simple />} />
           <Route path={`${APP_ROOT}/tables`} element={<Tables />} />
           <Route path={`${APP_ROOT}/markdown-shortcuts`} element={<Markdown />} />
-          <Route path={`${APP_ROOT}/share-db`} element={<ShareDB />} />
+          <Route path={`${APP_ROOT}/share-db`} element={<Navigate to={`${APP_ROOT}/share-db/${genId()}`} replace />} />
+          <Route path={`${APP_ROOT}/share-db/:docId`} element={<ShareDB />} />
           <Route path={`${APP_ROOT}/yjs`} element={<Yjs />} />
           <Route path="*" element={<Navigate to={`${APP_ROOT}/simple`} replace />} />
         </Routes>
