@@ -4,12 +4,12 @@ import { EnforceWithDocumentTitleHandler, MarkdownInputHandler } from '@nextedit
 import ShareDBDoc from '@nexteditorjs/nexteditor-sharedb';
 import Typography from '@mui/material/Typography';
 import { useParams } from 'react-router-dom';
-import NextEditor from '../NextEditor';
 import Box from '@mui/material/Box';
 import CircularProgress from '@mui/material/CircularProgress';
+import NextEditor from '../NextEditor';
 
 function getWebSocketAddress() {
-  const host = location.origin.replace(/^http/, 'ws');
+  const host = document.location.origin.replace(/^http/, 'ws');
   return `${host}/examples/sharedb-server`;
 }
 
@@ -45,7 +45,7 @@ export default function ShareDB() {
       } catch (err) {
         setError(err as Error);
       }
-    }
+    };
     //
     loadDocument();
     //

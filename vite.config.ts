@@ -9,6 +9,10 @@ export default defineConfig({
       '/examples/sharedb-server': {
         target: 'ws://localhost:8080',
         ws: true,
+      },
+      '/examples/yjs-server': {
+        target: 'ws://localhost:1234',
+        ws: true,
       }
     }
   },

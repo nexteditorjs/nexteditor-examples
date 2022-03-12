@@ -19,7 +19,7 @@ export default function NextEditor(props: NextEditorProps) {
       editorRef.current = createEditor(parent, initDoc ?? new LocalDoc(), {
         components: {
           blocks: [TableBlock],
-        }
+        },
       });
       if (onCreate) {
         onCreate(editorRef.current);
