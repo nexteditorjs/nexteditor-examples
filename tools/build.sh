@@ -16,5 +16,10 @@ git reset --hard
 git pull
 yarn
 
+cd ../nexteditor-yjs-server
+git reset --hard
+git pull
+yarn
+
 
 pm2 restart all
