@@ -2,6 +2,10 @@ cd ../
 git reset --hard
 git pull
 # rm -rf ./node_modules
+
+service nginx stop
+service mysql stop
+
 yarn
 yarn build
 

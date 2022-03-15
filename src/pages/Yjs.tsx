@@ -22,10 +22,10 @@ export default function Yjs() {
   const [doc, setDoc] = React.useState<NextEditorDoc | null>(null);
   const [error, setError] = React.useState<Error | null>(null);
 
-  // const handleDocError = useCallback((type: string, error: unknown) => {
-  //   console.error(type, error);
-  //   setError(new Error(JSON.stringify(error)));
-  // }, []);
+  const handleDocError = useCallback((type: string, error: unknown) => {
+    console.error(type, error);
+    setError(new Error(JSON.stringify(error)));
+  }, []);
   //
   React.useEffect(() => {
     //
@@ -34,7 +34,7 @@ export default function Yjs() {
         const doc = await YjsDoc.load({
           server: getWebSocketAddress(),
           documentId: docId,
-          // onDocError: handleDocError,
+          onDocError: handleDocError,
         });
         //
         setDoc(doc);
