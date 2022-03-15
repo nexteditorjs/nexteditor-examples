@@ -27,3 +27,6 @@ yarn
 
 
 pm2 restart all
+
+service nginx start
+service mysql start
