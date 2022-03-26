@@ -1,0 +1,296 @@
+{
+  "blocks": {
+      "root": [
+          {
+              "text": [
+                  {
+                      "insert": "Hovering toolbar"
+                  }
+              ],
+              "id": "NlXtBeaqM",
+              "type": "text",
+              "style-heading": 1
+          },
+          {
+              "id": "blmHRC2hF",
+              "type": "text",
+              "text": [
+                  {
+                      "insert": "This example shows how you can make a hovering toolbar appear above your content, which you can use to make text bold, italic, merge /split cells, or anything else you might want to do!"
+                  }
+              ]
+          },
+          {
+              "cols": 3,
+              "rows": 7,
+              "id": "NiLf98FqC",
+              "type": "table",
+              "children": [
+                  "NPmBPUuEx",
+                  "NWhQgP9Lx",
+                  "NzuxiYgzk",
+                  "NwkaBmADa",
+                  "NnRrrgL4h",
+                  "Nqm4sT1WO",
+                  "NI3WPeOeq",
+                  "N5K6pzwSR",
+                  "NHslPdSD3",
+                  "NA_rWIocs",
+                  "NVMEfNX6B",
+                  "N5rezKc5_",
+                  "NoTUnJ2Qn",
+                  "NzIbeOZe6",
+                  "NmWBjnfKJ",
+                  "NMW1JvCCe",
+                  "N0s1N8hXG",
+                  "Nz8ZgsQjJ",
+                  "NJrqDV0Of",
+                  "N7MxPi1W6",
+                  "NJIvg4J76"
+              ],
+              "colsWidth": [
+                  0,
+                  0,
+                  0
+              ]
+          },
+          {
+              "text": [],
+              "id": "NTsUJ9INs",
+              "type": "text"
+          }
+      ],
+      "NPmBPUuEx": [
+          {
+              "text": [
+                  {
+                      "insert": "Company"
+                  }
+              ],
+              "id": "NrpuzK8R9",
+              "type": "text"
+          }
+      ],
+      "NWhQgP9Lx": [
+          {
+              "text": [
+                  {
+                      "insert": "Contact"
+                  }
+              ],
+              "id": "Nja3PVntj",
+              "type": "text"
+          }
+      ],
+      "NzuxiYgzk": [
+          {
+              "text": [
+                  {
+                      "insert": "Country"
+                  }
+              ],
+              "id": "NH9waWjyw",
+              "type": "text"
+          }
+      ],
+      "NwkaBmADa": [
+          {
+              "text": [
+                  {
+                      "insert": "Alfreds Futterkiste"
+                  }
+              ],
+              "id": "NWH_Mc4CS",
+              "type": "text"
+          }
+      ],
+      "NnRrrgL4h": [
+          {
+              "text": [
+                  {
+                      "insert": "Maria Anders"
+                  }
+              ],
+              "id": "NXriQ6HQt",
+              "type": "text"
+          }
+      ],
+      "Nqm4sT1WO": [
+          {
+              "text": [
+                  {
+                      "insert": "Germany"
+                  }
+              ],
+              "id": "NlymW6u8d",
+              "type": "text"
+          }
+      ],
+      "NI3WPeOeq": [
+          {
+              "text": [
+                  {
+                      "insert": "Centro comercial Moctezuma"
+                  }
+              ],
+              "id": "NIord6Jmn",
+              "type": "text"
+          }
+      ],
+      "N5K6pzwSR": [
+          {
+              "text": [
+                  {
+                      "insert": "Francisco Chang"
+                  }
+              ],
+              "id": "NgNrSfKR4",
+              "type": "text"
+          }
+      ],
+      "NHslPdSD3": [
+          {
+              "text": [
+                  {
+                      "insert": "Mexico"
+                  }
+              ],
+              "id": "NugMOyBQW",
+              "type": "text"
+          }
+      ],
+      "NA_rWIocs": [
+          {
+              "text": [
+                  {
+                      "insert": "Ernst Handel"
+                  }
+              ],
+              "id": "NAevFDby7",
+              "type": "text"
+          }
+      ],
+      "NVMEfNX6B": [
+          {
+              "text": [
+                  {
+                      "insert": "Roland Mendel"
+                  }
+              ],
+              "id": "Nh2l3QX4f",
+              "type": "text"
+          }
+      ],
+      "N5rezKc5_": [
+          {
+              "text": [
+                  {
+                      "insert": "Austria"
+                  }
+              ],
+              "id": "N2gF7vq8R",
+              "type": "text"
+          }
+      ],
+      "NoTUnJ2Qn": [
+          {
+              "text": [
+                  {
+                      "insert": "Island Trading"
+                  }
+              ],
+              "id": "NS9SoI1nC",
+              "type": "text"
+          }
+      ],
+      "NzIbeOZe6": [
+          {
+              "text": [
+                  {
+                      "insert": "Helen Bennett"
+                  }
+              ],
+              "id": "NvjFsm6Pv",
+              "type": "text"
+          }
+      ],
+      "NmWBjnfKJ": [
+          {
+              "text": [
+                  {
+                      "insert": "UK"
+                  }
+              ],
+              "id": "NjI6oiYRU",
+              "type": "text"
+          }
+      ],
+      "NMW1JvCCe": [
+          {
+              "text": [
+                  {
+                      "insert": "Laughing Bacchus Winecellars"
+                  }
+              ],
+              "id": "NXVpS2Gl5",
+              "type": "text"
+          }
+      ],
+      "N0s1N8hXG": [
+          {
+              "text": [
+                  {
+                      "insert": "Yoshi Tannamuri"
+                  }
+              ],
+              "id": "NqzTdPSP4",
+              "type": "text"
+          }
+      ],
+      "Nz8ZgsQjJ": [
+          {
+              "text": [
+                  {
+                      "insert": "Canada"
+                  }
+              ],
+              "id": "N7PZzCQWL",
+              "type": "text"
+          }
+      ],
+      "NJrqDV0Of": [
+          {
+              "text": [
+                  {
+                      "insert": "Magazzini Alimentari Riuniti"
+                  }
+              ],
+              "id": "NCFezL0L5",
+              "type": "text"
+          }
+      ],
+      "N7MxPi1W6": [
+          {
+              "text": [
+                  {
+                      "insert": "Giovanni Rovelli"
+                  }
+              ],
+              "id": "NixtyyftK",
+              "type": "text"
+          }
+      ],
+      "NJIvg4J76": [
+          {
+              "text": [
+                  {
+                      "insert": "Italy"
+                  }
+              ],
+              "id": "NCdp2sCAO",
+              "type": "text"
+          }
+      ]
+  },
+  "meta": {}
+}

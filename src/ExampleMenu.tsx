@@ -31,9 +31,10 @@ export default function ExamplesMenu(props: ExamplesMenuProps) {
     >
       <MenuItem onClick={() => onClose('simple')}>Simple</MenuItem>
       <MenuItem onClick={() => onClose('tables')}>Tables</MenuItem>
-      <MenuItem onClick={() => onClose('markdown-shortcuts')}>Markdown Shortcuts</MenuItem>
+      <MenuItem onClick={() => onClose('markdown-shortcuts')}>Markdown shortcuts</MenuItem>
       <MenuItem onClick={() => onClose('sharedb')}>ShareDB document</MenuItem>
       <MenuItem onClick={() => onClose('yjs')}>Yjs document</MenuItem>
+      <MenuItem onClick={() => onClose('toolbar')}>Hovering toolbar</MenuItem>
     </Menu>
   );
 }

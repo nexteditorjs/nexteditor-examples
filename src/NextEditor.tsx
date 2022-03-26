@@ -1,6 +1,6 @@
 import React from 'react';
 import { NextEditor as Editor, createEditor, NextEditorDoc, LocalDoc } from '@nexteditorjs/nexteditor-core';
-import TableBlock from '@nexteditorjs/nexteditor-table-block';
+import TableBlock, { TableBlockCommandProvider } from '@nexteditorjs/nexteditor-table-block';
 
 export interface NextEditorProps {
   initDoc?: NextEditorDoc;
@@ -19,8 +19,10 @@ export default function NextEditor(props: NextEditorProps) {
       editorRef.current = createEditor(parent, initDoc ?? new LocalDoc(), {
         components: {
           blocks: [TableBlock],
+          commandProviders: [new TableBlockCommandProvider()],
         },
       });
+      (window as any).editor = editorRef.current;
       if (onCreate) {
         onCreate(editorRef.current);
       }

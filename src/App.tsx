@@ -8,6 +8,7 @@ import ShareDB from './pages/ShareDB';
 import Yjs from './pages/Yjs';
 import Tables from './pages/Tables';
 import Markdown from './pages/Markdown';
+import HoveringToolbar from './pages/HoveringToolbar';
 
 import './App.css';
 
@@ -33,6 +34,7 @@ function App() {
           <Route path={`${APP_ROOT}/simple`} element={<Simple />} />
           <Route path={`${APP_ROOT}/tables`} element={<Tables />} />
           <Route path={`${APP_ROOT}/markdown-shortcuts`} element={<Markdown />} />
+          <Route path={`${APP_ROOT}/toolbar`} element={<HoveringToolbar />} />
           <Route path={`${APP_ROOT}/sharedb/:docId`} element={<ShareDB />} />
           <Route path={`${APP_ROOT}/sharedb`} element={<Navigate to={`${APP_ROOT}/sharedb/${genId()}`} replace />} />
           <Route path={`${APP_ROOT}/yjs/:docId`} element={<Yjs />} />
