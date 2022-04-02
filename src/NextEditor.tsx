@@ -1,14 +1,16 @@
 import React from 'react';
-import { NextEditor as Editor, createEditor, NextEditorDoc, LocalDoc } from '@nexteditorjs/nexteditor-core';
+import { NextEditor as Editor, createEditor, NextEditorDoc, LocalDoc, NextEditorInsertions, NextEditorDecorator, Insertion } from '@nexteditorjs/nexteditor-core';
 import TableBlock, { TableBlockCommandProvider } from '@nexteditorjs/nexteditor-table-block';
 
 export interface NextEditorProps {
   initDoc?: NextEditorDoc;
   onCreate?: (editor: Editor) => void;
+  insertions?: Insertion[];
+  decorators?: NextEditorDecorator[];
 }
 
 export default function NextEditor(props: NextEditorProps) {
-  const { initDoc, onCreate } = props;
+  const { initDoc, onCreate, insertions, decorators } = props;
   //
   const containerRef = React.useRef(null);
   const editorRef = React.useRef<Editor | null>();
@@ -20,6 +22,8 @@ export default function NextEditor(props: NextEditorProps) {
         components: {
           blocks: [TableBlock],
           commandProviders: [new TableBlockCommandProvider()],
+          insertions,
+          decorators,
         },
       });
       (window as any).editor = editorRef.current;

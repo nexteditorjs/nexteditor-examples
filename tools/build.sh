@@ -19,6 +19,7 @@ cd ../nexteditor-sharedb-server
 git reset --hard
 git pull
 yarn
+tsc
 
 cd ../nexteditor-yjs-server
 git reset --hard

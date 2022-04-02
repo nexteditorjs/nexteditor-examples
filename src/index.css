@@ -31,3 +31,7 @@ code {
   padding: 32px 16px;
   /* z-index: -2; */
 }
+
+.editor-page > div {
+  width: 100%;
+}
