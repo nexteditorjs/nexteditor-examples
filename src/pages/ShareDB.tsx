@@ -70,7 +70,7 @@ export default function ShareDB() {
 
   const handleCreate = React.useCallback((editor: Editor) => {
     editorRef.current = editor;
-    editor.registerCallback(new BroadcastCursor(editor));
+    editor.addCustom('broadcast-cursor', (editor) => new BroadcastCursor(editor));
     editor.input.addHandler(new MarkdownInputHandler());
     editor.input.addHandler(new EnforceWithDocumentTitleHandler(editor, {
       headingLevel: 1,

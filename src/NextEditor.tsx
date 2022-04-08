@@ -27,7 +27,7 @@ export default function NextEditor(props: NextEditorProps) {
           decorators,
         },
       });
-      (window as any).editor = editorRef.current;
+      // (window as any).editor = editorRef.current;
       if (onCreate) {
         onCreate(editorRef.current);
       }
@@ -36,6 +36,7 @@ export default function NextEditor(props: NextEditorProps) {
     return () => {
       if (editorRef.current) {
         editorRef.current.destroy();
+        editorRef.current = null;
       }
     };
   }, [onCreate]);

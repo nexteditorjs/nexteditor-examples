@@ -11,7 +11,8 @@ const defaultDoc = new LocalDoc(initData);
 export default function HoveringToolbar() {
   //
   const handleCreate = React.useCallback((editor: Editor) => {
-    editor.registerCallback(new NextEditorToolbarHandler(editor));
+    // attach toolbar handler to editor
+    editor.addCustom('toolbar-handler', (editor) => new NextEditorToolbarHandler(editor));
     editor.input.addHandler(new MarkdownInputHandler());
     editor.focus();
   }, []);
