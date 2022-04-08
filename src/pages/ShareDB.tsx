@@ -16,7 +16,6 @@ function getWebSocketAddress() {
 const insertions = [RemoteCursorInsertion];
 const decorators = [new RemoteCursorDecorator()];
 
-
 export default function ShareDB() {
   //
   const params = useParams();
@@ -56,7 +55,6 @@ export default function ShareDB() {
         doc.client.remoteUsers.addListener('change', handleUserChanged);
         //
         setDoc(doc);
-        return doc;
       } catch (err) {
         setError(err as Error);
       }
@@ -66,7 +64,7 @@ export default function ShareDB() {
     //
     return () => {
       doc?.client.remoteUsers.removeListener('change', handleUserChanged);
-    }
+    };
     //
   }, [docId]);
 
@@ -96,7 +94,7 @@ export default function ShareDB() {
     );
   }
   //
-  
+
   //
   return (
     <div>
