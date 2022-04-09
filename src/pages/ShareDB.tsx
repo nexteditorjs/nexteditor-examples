@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react';
-import { createEmptyDoc, NextEditor as Editor, assert, NextEditorDoc, genId, RemoteCursorInsertion, NextEditorUser } from '@nexteditorjs/nexteditor-core';
+import { createEmptyDoc, NextEditor as Editor, assert, NextEditorDoc, genId, RemoteCursorInsertion, NextEditorUser, getLogger } from '@nexteditorjs/nexteditor-core';
 import { EnforceWithDocumentTitleHandler, MarkdownInputHandler } from '@nexteditorjs/nexteditor-input-handlers';
 import ShareDBDoc, { BroadcastCursor, RemoteCursorDecorator } from '@nexteditorjs/nexteditor-sharedb';
 import Typography from '@mui/material/Typography';
@@ -7,6 +7,8 @@ import { useParams } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import CircularProgress from '@mui/material/CircularProgress';
 import NextEditor from '../NextEditor';
+
+const logger = getLogger('sharedb');
 
 function getWebSocketAddress() {
   const host = document.location.origin.replace(/^http/, 'ws');
@@ -20,7 +22,7 @@ export default function ShareDB() {
   //
   const params = useParams();
   const docId = params.docId;
-  assert(docId, 'no docId');
+  assert(logger, docId, 'no docId');
   //
   const [doc, setDoc] = React.useState<ShareDBDoc | null>(null);
   const [error, setError] = React.useState<Error | null>(null);

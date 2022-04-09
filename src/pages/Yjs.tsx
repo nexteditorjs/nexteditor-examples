@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react';
-import { NextEditor as Editor, assert, NextEditorDoc } from '@nexteditorjs/nexteditor-core';
+import { NextEditor as Editor, assert, NextEditorDoc, getLogger } from '@nexteditorjs/nexteditor-core';
 import { EnforceWithDocumentTitleHandler, MarkdownInputHandler } from '@nexteditorjs/nexteditor-input-handlers';
 import YjsDoc from '@nexteditorjs/nexteditor-yjs';
 import Typography from '@mui/material/Typography';
@@ -7,6 +7,8 @@ import { useParams } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import CircularProgress from '@mui/material/CircularProgress';
 import NextEditor from '../NextEditor';
+
+const logger = getLogger('yjs');
 
 function getWebSocketAddress() {
   const host = document.location.origin.replace(/^http/, 'ws');
@@ -17,7 +19,7 @@ export default function Yjs() {
   //
   const params = useParams();
   const docId = params.docId;
-  assert(docId, 'no docId');
+  assert(logger, docId, 'no docId');
   //
   const [doc, setDoc] = React.useState<NextEditorDoc | null>(null);
   const [error, setError] = React.useState<Error | null>(null);
