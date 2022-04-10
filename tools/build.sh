@@ -35,11 +35,11 @@ git reset --hard
 git pull
 yarn
 
-echo --------restart node project--------
-pm2 restart all
-
 echo --------start nginx and mysql--------
 service nginx start
 service mysql start
+
+echo --------restart node project--------
+pm2 restart all
 
 echo --------done--------
