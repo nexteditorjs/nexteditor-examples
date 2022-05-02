@@ -19,7 +19,7 @@
     "@nexteditorjs/nexteditor-input-handlers": "^0.0.36",
     "@nexteditorjs/nexteditor-table-block": "^0.0.36",
     "@nexteditorjs/nexteditor-list-block": "^0.0.36",
-    "@nexteditorjs/nexteditor-code-block": "^0.0.3",
+    "@nexteditorjs/nexteditor-code-block": "^0.0.36",
     "@nexteditorjs/nexteditor-sharedb": "^0.0.36",
     "@nexteditorjs/nexteditor-yjs": "^0.0.36",
     "@nexteditorjs/nexteditor-ui": "^0.0.36",
