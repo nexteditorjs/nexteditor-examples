@@ -2,6 +2,7 @@ import React from 'react';
 import { NextEditor as Editor, createEditor, NextEditorDoc, LocalDoc, NextEditorDecorator, Insertion } from '@nexteditorjs/nexteditor-core';
 import TableBlock, { TableBlockCommandProvider } from '@nexteditorjs/nexteditor-table-block';
 import ListBlock from '@nexteditorjs/nexteditor-list-block';
+import CodeBlock from '@nexteditorjs/nexteditor-code-block';
 
 export interface NextEditorProps {
   initDoc?: NextEditorDoc;
@@ -21,7 +22,7 @@ export default function NextEditor(props: NextEditorProps) {
     if (parent) {
       editorRef.current = createEditor(parent, initDoc ?? new LocalDoc(), {
         components: {
-          blocks: [TableBlock, ListBlock],
+          blocks: [TableBlock, ListBlock, CodeBlock],
           commandProviders: [new TableBlockCommandProvider()],
           insertions,
           decorators,
