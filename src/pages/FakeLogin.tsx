@@ -20,16 +20,15 @@ export default function FakeLogin(props: Props) {
   };
   //
   return (
-    <Box sx={{
+    <Box style={{
       display: 'flex',
       justifyContent: 'center',
       width: '100%',
       alignItems: 'center',
       flexDirection: 'column',
-      '&>* + *': { marginTop: 1 },
     }}>
       <TextField id="standard-basic" label="Enter your name" variant="standard" onChange={handleUsernameChange} />
-      <Button variant="contained" onClick={handleLogin} sx={{ marginTop: 1 }}>OK</Button>
+      <Button variant="contained" onClick={handleLogin} style={{ marginTop: 8 }}>OK</Button>
     </Box>
   );
 }
