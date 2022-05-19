@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react';
-import { createEmptyDoc, NextEditor as Editor, assert, NextEditorDoc, genId, RemoteCursorInsertion, NextEditorUser, getLogger } from '@nexteditorjs/nexteditor-core';
+import { createEmptyDoc, NextEditor as Editor, assert, RemoteCursorInsertion, NextEditorUser, getLogger } from '@nexteditorjs/nexteditor-core';
 import { EnforceWithDocumentTitleHandler, MarkdownInputHandler } from '@nexteditorjs/nexteditor-input-handlers';
 import ShareDBDoc, { BroadcastCursor, RemoteCursorDecorator } from '@nexteditorjs/nexteditor-sharedb';
 import Typography from '@mui/material/Typography';
@@ -7,6 +7,7 @@ import { useParams } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import CircularProgress from '@mui/material/CircularProgress';
 import NextEditor from '../NextEditor';
+import FakeLogin from './FakeLogin';
 
 const logger = getLogger('sharedb');
 
@@ -24,13 +25,14 @@ export default function ShareDB() {
   const docId = params.docId;
   assert(logger, docId, 'no docId');
   //
+  const [token, setToken] = React.useState('');
   const [doc, setDoc] = React.useState<ShareDBDoc | null>(null);
   const [error, setError] = React.useState<Error | null>(null);
   const [users, setUsers] = React.useState<NextEditorUser[]>([]);
   const editorRef = React.useRef<Editor | null>(null);
 
   const handleDocError = useCallback((type: string, error: unknown) => {
-    console.error(type, error);
+    logger.error(`doc error: ${type}, ${JSON.stringify(error)}`);
     setError(new Error(JSON.stringify(error)));
   }, []);
 
@@ -44,7 +46,7 @@ export default function ShareDB() {
     const loadDocument = async () => {
       try {
         doc = await ShareDBDoc.load({
-          token: genId(),
+          token,
           server: getWebSocketAddress(),
           collectionName: 'examples',
           documentId: docId,
@@ -62,13 +64,15 @@ export default function ShareDB() {
       }
     };
     //
-    loadDocument();
+    if (token) {
+      loadDocument();
+    }
     //
     return () => {
       doc?.client.remoteUsers.removeListener('change', handleUserChanged);
     };
     //
-  }, [docId]);
+  }, [docId, token]);
 
   const handleCreate = React.useCallback((editor: Editor) => {
     editorRef.current = editor;
@@ -83,10 +87,34 @@ export default function ShareDB() {
     (editor.doc.externalDoc as ShareDBDoc).client.remoteUsers.defaultHandleCursorChange(editor);
     editor.focus();
   }, []);
+
+  const handleLogin = async (username: string) => {
+    try {
+      const ws = getWebSocketAddress();
+      const url = ws.replace(/^ws/, 'http');
+      const userId = encodeURIComponent(username);
+      const name = encodeURIComponent(username);
+      const avatarName = encodeURIComponent(username.toLocaleLowerCase());
+      const avatarUrl = encodeURIComponent(`https://picsum.photos/seed/${avatarName}/72/72`);
+      const response = await fetch(`${url}/fake/examples/${docId}/token?permission=w&userId=${userId}&name=${name}&avatarUrl=${avatarUrl}`);
+      const responseData = await response.json();
+      setToken(responseData.token);
+    } catch (err) {
+      logger.error(JSON.stringify(err));
+      setError(err as Error);
+    }
+  };
   //
   if (error) {
     return (<Typography color="red">{error.message}</Typography>);
   }
+  //
+  if (!token) {
+    return (
+      <FakeLogin onLogin={handleLogin}/>
+    );
+  }
+  //
   //
   if (!doc) {
     return (
@@ -95,9 +123,7 @@ export default function ShareDB() {
       </Box>
     );
   }
-  //
 
-  //
   return (
     <div>
       <Box sx={{
