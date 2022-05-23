@@ -11,9 +11,9 @@ import FakeLogin from './FakeLogin';
 
 const logger = getLogger('sharedb');
 
-function getWebSocketAddress() {
+function getWebSocketServer() {
   const host = document.location.origin.replace(/^http/, 'ws');
-  return `${host}/examples/sharedb-server`;
+  return `${host}/examples/sharedb-api`;
 }
 
 const insertions = [RemoteCursorInsertion];
@@ -47,7 +47,7 @@ export default function ShareDB() {
       try {
         doc = await ShareDBDoc.load({
           token,
-          server: getWebSocketAddress(),
+          server: `${getWebSocketServer()}/nexteditor`,
           collectionName: 'examples',
           documentId: docId,
           docTemplate: createEmptyDoc('', {
@@ -90,13 +90,13 @@ export default function ShareDB() {
 
   const handleLogin = async (username: string) => {
     try {
-      const ws = getWebSocketAddress();
+      const ws = getWebSocketServer();
       const url = ws.replace(/^ws/, 'http');
       const userId = encodeURIComponent(username);
       const name = encodeURIComponent(username);
       const avatarName = encodeURIComponent(username.toLocaleLowerCase());
       const avatarUrl = encodeURIComponent(`https://picsum.photos/seed/${avatarName}/72/72`);
-      const response = await fetch(`${url}/fake/examples/${docId}/token?permission=w&userId=${userId}&name=${name}&avatarUrl=${avatarUrl}`);
+      const response = await fetch(`${url}/fake-api/examples/${docId}/token?permission=w&userId=${userId}&name=${name}&avatarUrl=${avatarUrl}`);
       const responseData = await response.json();
       setToken(responseData.token);
     } catch (err) {
